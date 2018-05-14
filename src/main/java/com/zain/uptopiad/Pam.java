@@ -4,6 +4,7 @@ import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.lang.Nullable;
 
 public class Pam {
 	@Id
@@ -17,15 +18,21 @@ public class Pam {
 	private int PED_EP_PAM_CLASS_ID;
 	private int PED_EP_SCHEDULE_ID;
 	private int PAM_INDICATOR;
-//	private double BALANCE_BEFORE;
-//	private double BALANCE_AFTER;
-//	private double DELTA_AMOUNT;
-//	private double ADAS_ACC_VALUE_BEFORE;
-//	private double ADAS_ACC_VALUE_AFTER;
-//	private double ADAS_ADJUSTMENT_AMOUNT;
-//	private int ADS_ACCUM_VALUE_BEFORE;
-//	private int ADS_ACCUM_VALUE_AFTER;
-//	private String TDF;
+	private double BALANCE_BEFORE;
+	private double BALANCE_AFTER;
+	private double DELTA_AMOUNT;
+	@Nullable
+	private double ADAS_ACC_VALUE_BEFORE;
+	@Nullable
+	private double ADAS_ACC_VALUE_AFTER;
+	@Nullable
+	private double ADAS_ADJUSTMENT_AMOUNT;
+	@Nullable
+	private int ADS_ACCUM_VALUE_BEFORE;
+	@Nullable
+	private int ADS_ACCUM_VALUE_AFTER;
+	@Nullable
+	private String TDF;
 
 	public Pam() {
 	}
@@ -42,16 +49,16 @@ public class Pam {
 		ORIGIN_NODE_ID = oRIGIN_NODE_ID;
 		PED_EP_PAM_CLASS_ID = pED_EP_PAM_CLASS_ID;
 		PED_EP_SCHEDULE_ID = pED_EP_SCHEDULE_ID;
-//		PAM_INDICATOR = pAM_INDICATOR;
-//		BALANCE_BEFORE = bALANCE_BEFORE;
-//		BALANCE_AFTER = bALANCE_AFTER;
-//		DELTA_AMOUNT = dELTA_AMOUNT;
-//		ADAS_ACC_VALUE_BEFORE = aDAS_ACC_VALUE_BEFORE;
-//		ADAS_ACC_VALUE_AFTER = aDAS_ACC_VALUE_AFTER;
-//		ADAS_ADJUSTMENT_AMOUNT = aDAS_ADJUSTMENT_AMOUNT;
-//		ADS_ACCUM_VALUE_BEFORE = aDS_ACCUM_VALUE_BEFORE;
-//		ADS_ACCUM_VALUE_AFTER = aDS_ACCUM_VALUE_AFTER;
-//		TDF = tDF;
+		PAM_INDICATOR = pAM_INDICATOR;
+		BALANCE_BEFORE = bALANCE_BEFORE;
+		BALANCE_AFTER = bALANCE_AFTER;
+		DELTA_AMOUNT = dELTA_AMOUNT;
+		ADAS_ACC_VALUE_BEFORE = aDAS_ACC_VALUE_BEFORE;
+		ADAS_ACC_VALUE_AFTER = aDAS_ACC_VALUE_AFTER;
+		ADAS_ADJUSTMENT_AMOUNT = aDAS_ADJUSTMENT_AMOUNT;
+		ADS_ACCUM_VALUE_BEFORE = aDS_ACCUM_VALUE_BEFORE;
+		ADS_ACCUM_VALUE_AFTER = aDS_ACCUM_VALUE_AFTER;
+		TDF = tDF;
 	}
 
 	public String getId() {
@@ -117,97 +124,89 @@ public class Pam {
 	public void setPAM_INDICATOR(int pAM_INDICATOR) {
 		PAM_INDICATOR = pAM_INDICATOR;
 	}
-//
-//	public double getBALANCE_BEFORE() {
-//		return BALANCE_BEFORE;
-//	}
-//
-//	public void setBALANCE_BEFORE(double bALANCE_BEFORE) {
-//		BALANCE_BEFORE = bALANCE_BEFORE;
-//	}
-//
-//	public double getBALANCE_AFTER() {
-//		return BALANCE_AFTER;
-//	}
-//
-//	public void setBALANCE_AFTER(double bALANCE_AFTER) {
-//		BALANCE_AFTER = bALANCE_AFTER;
-//	}
-//
-//	public double getDELTA_AMOUNT() {
-//		return DELTA_AMOUNT;
-//	}
-//
-//	public void setDELTA_AMOUNT(double dELTA_AMOUNT) {
-//		DELTA_AMOUNT = dELTA_AMOUNT;
-//	}
-//
-//	public double getADAS_ACC_VALUE_BEFORE() {
-//		return ADAS_ACC_VALUE_BEFORE;
-//	}
-//
-//	public void setADAS_ACC_VALUE_BEFORE(double aDAS_ACC_VALUE_BEFORE) {
-//		ADAS_ACC_VALUE_BEFORE = aDAS_ACC_VALUE_BEFORE;
-//	}
-//
-//	public double getADAS_ACC_VALUE_AFTER() {
-//		return ADAS_ACC_VALUE_AFTER;
-//	}
-//
-//	public void setADAS_ACC_VALUE_AFTER(double aDAS_ACC_VALUE_AFTER) {
-//		ADAS_ACC_VALUE_AFTER = aDAS_ACC_VALUE_AFTER;
-//	}
-//
-//	public double getADAS_ADJUSTMENT_AMOUNT() {
-//		return ADAS_ADJUSTMENT_AMOUNT;
-//	}
-//
-//	public void setADAS_ADJUSTMENT_AMOUNT(double aDAS_ADJUSTMENT_AMOUNT) {
-//		ADAS_ADJUSTMENT_AMOUNT = aDAS_ADJUSTMENT_AMOUNT;
-//	}
-//
-//	public int getADS_ACCUM_VALUE_BEFORE() {
-//		return ADS_ACCUM_VALUE_BEFORE;
-//	}
-//
-//	public void setADS_ACCUM_VALUE_BEFORE(int aDS_ACCUM_VALUE_BEFORE) {
-//		ADS_ACCUM_VALUE_BEFORE = aDS_ACCUM_VALUE_BEFORE;
-//	}
-//
-//	public int getADS_ACCUM_VALUE_AFTER() {
-//		return ADS_ACCUM_VALUE_AFTER;
-//	}
-//
-//	public void setADS_ACCUM_VALUE_AFTER(int aDS_ACCUM_VALUE_AFTER) {
-//		ADS_ACCUM_VALUE_AFTER = aDS_ACCUM_VALUE_AFTER;
-//	}
-//
-//	public String getTDF() {
-//		return TDF;
-//	}
-//
-//	public void setTDF(String tDF) {
-//		TDF = tDF;
-//	}
 
-//	@Override
-//	public String toString() {
-//		return "Pam [id=" + id + ", msisdn=" + msisdn + ", TIMES_TAMP=" + TIMES_TAMP
-//				+ ", SERVICE_CLASS_ID=" + SERVICE_CLASS_ID + ", ORIGIN_NODE_ID=" + ORIGIN_NODE_ID
-//				+ ", PED_EP_PAM_CLASS_ID=" + PED_EP_PAM_CLASS_ID + ", PED_EP_SCHEDULE_ID=" + PED_EP_SCHEDULE_ID
-//				+ ", PAM_INDICATOR=" + PAM_INDICATOR + ", BALANCE_BEFORE=" + BALANCE_BEFORE + ", BALANCE_AFTER="
-//				+ BALANCE_AFTER + ", DELTA_AMOUNT=" + DELTA_AMOUNT + ", ADAS_ACC_VALUE_BEFORE=" + ADAS_ACC_VALUE_BEFORE
-//				+ ", ADAS_ACC_VALUE_AFTER=" + ADAS_ACC_VALUE_AFTER + ", ADAS_ADJUSTMENT_AMOUNT="
-//				+ ADAS_ADJUSTMENT_AMOUNT + ", ADS_ACCUM_VALUE_BEFORE=" + ADS_ACCUM_VALUE_BEFORE
-//				+ ", ADS_ACCUM_VALUE_AFTER=" + ADS_ACCUM_VALUE_AFTER + ", TDF=" + TDF + "]";
-//	}
-//	
+	public double getBALANCE_BEFORE() {
+		return BALANCE_BEFORE;
+	}
+
+	public void setBALANCE_BEFORE(double bALANCE_BEFORE) {
+		BALANCE_BEFORE = bALANCE_BEFORE;
+	}
+
+	public double getBALANCE_AFTER() {
+		return BALANCE_AFTER;
+	}
+
+	public void setBALANCE_AFTER(double bALANCE_AFTER) {
+		BALANCE_AFTER = bALANCE_AFTER;
+	}
+
+	public double getDELTA_AMOUNT() {
+		return DELTA_AMOUNT;
+	}
+
+	public void setDELTA_AMOUNT(double dELTA_AMOUNT) {
+		DELTA_AMOUNT = dELTA_AMOUNT;
+	}
+
+	public double getADAS_ACC_VALUE_BEFORE() {
+		return ADAS_ACC_VALUE_BEFORE;
+	}
+
+	public void setADAS_ACC_VALUE_BEFORE(double aDAS_ACC_VALUE_BEFORE) {
+		ADAS_ACC_VALUE_BEFORE = aDAS_ACC_VALUE_BEFORE;
+	}
+
+	public double getADAS_ACC_VALUE_AFTER() {
+		return ADAS_ACC_VALUE_AFTER;
+	}
+
+	public void setADAS_ACC_VALUE_AFTER(double aDAS_ACC_VALUE_AFTER) {
+		ADAS_ACC_VALUE_AFTER = aDAS_ACC_VALUE_AFTER;
+	}
+
+	public double getADAS_ADJUSTMENT_AMOUNT() {
+		return ADAS_ADJUSTMENT_AMOUNT;
+	}
+
+	public void setADAS_ADJUSTMENT_AMOUNT(double aDAS_ADJUSTMENT_AMOUNT) {
+		ADAS_ADJUSTMENT_AMOUNT = aDAS_ADJUSTMENT_AMOUNT;
+	}
+
+	public int getADS_ACCUM_VALUE_BEFORE() {
+		return ADS_ACCUM_VALUE_BEFORE;
+	}
+
+	public void setADS_ACCUM_VALUE_BEFORE(int aDS_ACCUM_VALUE_BEFORE) {
+		ADS_ACCUM_VALUE_BEFORE = aDS_ACCUM_VALUE_BEFORE;
+	}
+
+	public int getADS_ACCUM_VALUE_AFTER() {
+		return ADS_ACCUM_VALUE_AFTER;
+	}
+
+	public void setADS_ACCUM_VALUE_AFTER(int aDS_ACCUM_VALUE_AFTER) {
+		ADS_ACCUM_VALUE_AFTER = aDS_ACCUM_VALUE_AFTER;
+	}
+
+	public String getTDF() {
+		return TDF;
+	}
+
+	public void setTDF(String tDF) {
+		TDF = tDF;
+	}
+
 	@Override
 	public String toString() {
-		return "Pam [id=" + id + ", msisdn=" + msisdn + ", TIMES_TAMP=" + TIMES_TAMP
-				+ ", SERVICE_CLASS_ID=" + SERVICE_CLASS_ID + ", ORIGIN_NODE_ID=" + ORIGIN_NODE_ID
-				+ ", PED_EP_PAM_CLASS_ID=" + PED_EP_PAM_CLASS_ID + ", PED_EP_SCHEDULE_ID=" + PED_EP_SCHEDULE_ID
-				+ ", PAM_INDICATOR=" + PAM_INDICATOR + "]";
+		return "Pam [id=" + id + ", msisdn=" + msisdn + ", TIMES_TAMP=" + TIMES_TAMP + ", SERVICE_CLASS_ID="
+				+ SERVICE_CLASS_ID + ", ORIGIN_NODE_ID=" + ORIGIN_NODE_ID + ", PED_EP_PAM_CLASS_ID="
+				+ PED_EP_PAM_CLASS_ID + ", PED_EP_SCHEDULE_ID=" + PED_EP_SCHEDULE_ID + ", PAM_INDICATOR="
+				+ PAM_INDICATOR + ", BALANCE_BEFORE=" + BALANCE_BEFORE + ", BALANCE_AFTER=" + BALANCE_AFTER
+				+ ", DELTA_AMOUNT=" + DELTA_AMOUNT + ", ADAS_ACC_VALUE_BEFORE=" + ADAS_ACC_VALUE_BEFORE
+				+ ", ADAS_ACC_VALUE_AFTER=" + ADAS_ACC_VALUE_AFTER + ", ADAS_ADJUSTMENT_AMOUNT="
+				+ ADAS_ADJUSTMENT_AMOUNT + ", ADS_ACCUM_VALUE_BEFORE=" + ADS_ACCUM_VALUE_BEFORE
+				+ ", ADS_ACCUM_VALUE_AFTER=" + ADS_ACCUM_VALUE_AFTER + ", TDF=" + TDF + "]";
 	}
 
 }

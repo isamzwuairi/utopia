@@ -25,9 +25,12 @@ public class UtopiadApplication implements CommandLineRunner {
 		System.out.println("--------------------------------");
 		System.out.println(subscriberRepository.findByMsisdn(794612342));
 
-		System.out.println("Pam found with findByMsisdn('794612342'):");
+		System.out.println("Pam found with findByMsisdn('790914579'):");
 		System.out.println("--------------------------------");
-		System.out.println(pamRepository.findByMsisdn(792554593));
+//		System.out.println(pamRepository.findByMsisdn(790914579));
+		for (Pam pam : pamRepository.findByMsisdn(790914579)) {
+			System.out.println(pam);
+		}
 
 	}
 }
