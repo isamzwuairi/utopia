@@ -1,4 +1,4 @@
-package com.zain.uptopiad;
+package com.zain.uptopiad.models;
 
 import java.util.Date;
 

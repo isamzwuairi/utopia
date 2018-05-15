@@ -1,4 +1,4 @@
-package com.zain.uptopiad;
+package com.zain.uptopiad.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
