@@ -9,4 +9,6 @@ import com.zain.uptopiad.models.Pam;
 public interface PamRepository extends MongoRepository<Pam, String> {
 
 	public List<Pam> findByMsisdn(int msisdn);
+
+	public Pam findByStatus(int IS_PROCESSED);
 }

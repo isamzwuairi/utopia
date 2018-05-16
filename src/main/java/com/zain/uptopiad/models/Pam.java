@@ -4,7 +4,6 @@ import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
-import org.springframework.lang.Nullable;
 
 public class Pam {
 	@Id
@@ -21,29 +20,26 @@ public class Pam {
 	private double BALANCE_BEFORE;
 	private double BALANCE_AFTER;
 	private double DELTA_AMOUNT;
-	@Nullable
 	private double ADAS_ACC_VALUE_BEFORE;
-	@Nullable
 	private double ADAS_ACC_VALUE_AFTER;
-	@Nullable
 	private double ADAS_ADJUSTMENT_AMOUNT;
-	@Nullable
 	private int ADS_ACCUM_VALUE_BEFORE;
-	@Nullable
 	private int ADS_ACCUM_VALUE_AFTER;
-	@Nullable
 	private String TDF;
+	@Field("STATUS")
+	private int status;
 
 	public Pam() {
 	}
 
-	public Pam(String id, int aCCOUNT_NUMBER, Date tIMES_TAMP, int sERVICE_CLASS_ID, String oRIGIN_NODE_ID,
+	public Pam(String id, int msisdn, Date tIMES_TAMP, int sERVICE_CLASS_ID, String oRIGIN_NODE_ID,
 			int pED_EP_PAM_CLASS_ID, int pED_EP_SCHEDULE_ID, int pAM_INDICATOR, double bALANCE_BEFORE,
 			double bALANCE_AFTER, double dELTA_AMOUNT, double aDAS_ACC_VALUE_BEFORE, double aDAS_ACC_VALUE_AFTER,
-			double aDAS_ADJUSTMENT_AMOUNT, int aDS_ACCUM_VALUE_BEFORE, int aDS_ACCUM_VALUE_AFTER, String tDF) {
+			double aDAS_ADJUSTMENT_AMOUNT, int aDS_ACCUM_VALUE_BEFORE, int aDS_ACCUM_VALUE_AFTER, String tDF,
+			int sTATUS) {
 		super();
 		this.id = id;
-		msisdn = aCCOUNT_NUMBER;
+		this.msisdn = msisdn;
 		TIMES_TAMP = tIMES_TAMP;
 		SERVICE_CLASS_ID = sERVICE_CLASS_ID;
 		ORIGIN_NODE_ID = oRIGIN_NODE_ID;
@@ -59,6 +55,7 @@ public class Pam {
 		ADS_ACCUM_VALUE_BEFORE = aDS_ACCUM_VALUE_BEFORE;
 		ADS_ACCUM_VALUE_AFTER = aDS_ACCUM_VALUE_AFTER;
 		TDF = tDF;
+		status = sTATUS;
 	}
 
 	public String getId() {
@@ -73,8 +70,8 @@ public class Pam {
 		return msisdn;
 	}
 
-	public void setMsisdn(int aCCOUNT_NUMBER) {
-		msisdn = aCCOUNT_NUMBER;
+	public void setMsisdn(int msisdn) {
+		this.msisdn = msisdn;
 	}
 
 	public Date getTIMES_TAMP() {
@@ -197,6 +194,14 @@ public class Pam {
 		TDF = tDF;
 	}
 
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int sTATUS) {
+		status = sTATUS;
+	}
+
 	@Override
 	public String toString() {
 		return "Pam [id=" + id + ", msisdn=" + msisdn + ", TIMES_TAMP=" + TIMES_TAMP + ", SERVICE_CLASS_ID="
@@ -206,7 +211,6 @@ public class Pam {
 				+ ", DELTA_AMOUNT=" + DELTA_AMOUNT + ", ADAS_ACC_VALUE_BEFORE=" + ADAS_ACC_VALUE_BEFORE
 				+ ", ADAS_ACC_VALUE_AFTER=" + ADAS_ACC_VALUE_AFTER + ", ADAS_ADJUSTMENT_AMOUNT="
 				+ ADAS_ADJUSTMENT_AMOUNT + ", ADS_ACCUM_VALUE_BEFORE=" + ADS_ACCUM_VALUE_BEFORE
-				+ ", ADS_ACCUM_VALUE_AFTER=" + ADS_ACCUM_VALUE_AFTER + ", TDF=" + TDF + "]";
+				+ ", ADS_ACCUM_VALUE_AFTER=" + ADS_ACCUM_VALUE_AFTER + ", TDF=" + TDF + ", STATUS=" + status + "]";
 	}
-
 }
